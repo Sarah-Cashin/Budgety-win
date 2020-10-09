@@ -229,19 +229,19 @@ body {
 
 .income {
     float: left;
-    width: 475px;
+    width: 200px;
     margin-right: 50px;
 }
 
 .expenses {
     float: left;
-    width: 475px;
+    width: 300px;
 }
 
 .otherinc {
     float: left;
-    width: 475px;
-    margin-left: 200px;
+    width: 200px;
+    margin-left: 400px;
     margin-top: -40px;
 }
 
