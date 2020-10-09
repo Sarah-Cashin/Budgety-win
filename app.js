@@ -62,7 +62,7 @@ var budgetController = (function() {
         totals: {
             exp: 0,
             inc: 0,
-            otherinc: []
+            otherinc: 0
         },
         budget: 0,
         percentage: -1
@@ -130,11 +130,11 @@ var budgetController = (function() {
             calculateTotal('otherinc');
 
             // Calculate the budget: income - expenses
-            data.budget = data.totals.inc - data.totals.exp;
+            data.budget = data.totals.inc + data.totals.otherinc - data.totals.exp;
 
             // calculate the percentage of income that we spent
             if (data.totals.inc > 0) {
-                data.percentage = Math.round((data.totals.exp / data.totals.inc) * 100);
+                data.percentage = Math.round((data.totals.exp / data.totals.inc + data.totals.otherinc) * 100);
             } else {
                 data.percentage = -1;
             }
@@ -156,6 +156,7 @@ var budgetController = (function() {
 
             data.allItems.exp.forEach(function(cur) {
                 cur.calcPercentage(data.totals.inc);
+                cur.calcPercentage(data.totals.otherinc)
             });
         },
 
@@ -202,7 +203,7 @@ var UIController = (function() {
         budgetLabel: '.budget__value',
         incomeLabel: '.budget__income--value',
         expensesLabel: '.budget__expenses--value',
-        otherincLabel: '.budget__expenses--value',
+        otherincLabel: '.budget__otherinc--value',
         percentageLabel: '.budget__expenses--percentage',
         container: '.container',
         expensesPercLabel: '.item__percentage',
