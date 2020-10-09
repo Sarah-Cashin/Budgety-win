@@ -179,7 +179,7 @@ body {
     font-family: inherit;
     font-size: 14px;
     padding: 12px 15px;
-    margin-right: 10px;
+    margin-right: 50px;
     border-radius: 5px;
     transition: border 0.3s;
 }
@@ -229,7 +229,7 @@ body {
 
 .income {
     float: left;
-    width: 200px;
+    width: 300px;
     margin-right: 50px;
 }
 
@@ -239,8 +239,7 @@ body {
 }
 
 .otherinc {
-    float: left;
-    width: 200px;
+    width: 300px;
     margin-left: 400px;
     margin-top: -40px;
 }
